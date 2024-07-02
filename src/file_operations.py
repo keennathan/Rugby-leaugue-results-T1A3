@@ -37,3 +37,6 @@ def save_games(file_path, games):
         print(f"Error: Permission denide to write.")
     except Exception as e:
         print(f"An unexpected error has occured: {e}")
+
+# games_list = load_games('../data/SeasonData.json')
+# print("Loaded games:", games_list)
