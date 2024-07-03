@@ -1,5 +1,7 @@
-from operations import load_games, save_games, display_games_from_round 
+from operations import load_games, save_games, display_games_from_round, team_with_most_points_scored
 from tabulate import tabulate
+from colorama import Fore, Style, init
+init()
 
 
 FILE_PATH = './data/SeasonData.json'
@@ -11,8 +13,8 @@ def main():
         print("No games loaded or an error has occured")
         return
     
-    print("\nFooty Results Tracker")
-    print("1. Search for results from a round.")
+    print(Fore.RED + "\nFooty Results Tracker" + Style.RESET_ALL)
+    print(Fore.MAGENTA + "1." + Style.RESET_ALL, "Search for results from a round.")
     print("2. Display the team who has scored the most points.")
     print("3. Add a match.")
     print("0. Save and exit.")
@@ -33,6 +35,12 @@ def main():
                 print(f"No results found for round {round_number}.")
         except ValueError:
             print("Invalid input. Please enter a valid round number.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+    elif choice == "2":
+        try:
+            top_team, max_points = team_with_most_points_scored(matches)
+            print(f"The team who has scored the most points is {top_team} with {max_points} points.")
         except Exception as e:
             print(f"An unexpected error occurred: {e}")
     else:

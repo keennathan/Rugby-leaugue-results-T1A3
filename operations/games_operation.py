@@ -33,4 +33,32 @@ def display_games_from_round(matches, round_number):
 # add_game
 
 
-# def most_points_scored():
+def team_with_most_points_scored(matches):
+    # A dictionary to store total points for each team
+    team_points = {}
+
+    for match in matches:
+        # Add the points for the home team
+        home_team = match["HomeTeam"]
+        home_points = match["HomeTeamScore"]
+        if home_team in team_points:
+            team_points[home_team] += home_points
+        else:
+            team_points[home_team] = home_points
+
+        # Add the points for the away team
+        away_team = match["AwayTeam"]
+        away_points = match["AwayTeamScore"]
+        if away_team in team_points:
+            team_points[away_team] += away_points
+        else:
+            team_points[away_team] = away_points
+
+        # To find th team with the most points
+    max_points = 0 
+    top_team = None
+    for team, points in team_points.items():
+        if points > max_points:
+            max_points = points
+            top_team = team
+    return top_team, max_points
