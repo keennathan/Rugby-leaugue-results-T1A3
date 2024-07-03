@@ -1,7 +1,8 @@
-from file_operations import load_games, save_games
-from games_operation import display_games_from_round 
+from operations import load_games, save_games, display_games_from_round 
+from tabulate import tabulate
 
-FILE_PATH = '../data/SeasonData.json'
+
+FILE_PATH = './data/SeasonData.json'
 
 def main():
     matches = load_games(FILE_PATH)
@@ -12,16 +13,22 @@ def main():
     
     print("\nFooty Results Tracker")
     print("1. Search for results from a round.")
+    print("2. Display the team who has scored the most points.")
+    print("3. Add a match.")
+    print("0. Save and exit.")
 
     choice = input("Make a selection: ")
-
     if choice == '1':
         try:
             round_number = int(input("Enter the round number: "))
             results = display_games_from_round(matches, round_number)
             if results:
-                for result in results:
-                    print(result)
+                # Prepare data for tabulate
+                headers = ["MatchNumber", "Date", "Location", "HomeTeam", "AwayTeam", "HomeTeamScore", "AwayTeamScore"]
+                table = [[result["MatchNumber"], result["Date"], result["Location"], result["HomeTeam"], result["AwayTeam"], result["HomeTeamScore"], result["AwayTeamScore"]] for result in results]
+                
+                # Print table
+                print(tabulate(table, headers=headers, tablefmt="grid"))
             else:
                 print(f"No results found for round {round_number}.")
         except ValueError:
