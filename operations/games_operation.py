@@ -30,10 +30,28 @@ def display_games_from_round(matches, round_number):
         print(f"An unexpected error occurred: {e}")
     return []
 
-# add_game
 
 
 def team_with_most_points_scored(matches):
+    """
+    Searches for the team that has scored the most points in the season.
+
+    Parameters:
+    matches (list): A list of dictionaries, where each dictionary represents a match and contains the following keys:
+        - 'MatchNumber' (int): The match number.
+        - 'RoundNumber' (int): The round number.
+        - 'Date' (str): The date of the match.
+        - 'Location' (str): The location of the match.
+        - 'HomeTeam' (str): The name of the home team.
+        - 'AwayTeam' (str): The name of the away team.
+        - 'HomeTeamScore' (int): The score of the home team.
+        - 'AwayTeamScore' (int): The score of the away team.
+
+    returns:
+    A string with the team and the total points 
+
+    """
+
     # A dictionary to store total points for each team
     team_points = {}
 
@@ -62,3 +80,7 @@ def team_with_most_points_scored(matches):
             max_points = points
             top_team = team
     return top_team, max_points
+
+
+
+# add_game
