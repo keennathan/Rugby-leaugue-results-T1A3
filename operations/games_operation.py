@@ -81,6 +81,17 @@ def team_with_most_points_scored(matches):
             top_team = team
     return top_team, max_points
 
+def list_of_stadiums(matches):
+    """
+    lists all the stadiums from the matches.
+    Args:
+        matches (list): list of dictionaries.
+    returns:
+        list of stadiums played at.
+    """
+    list_stadiums = {match['Location'] for match in matches}
+    return list(list_stadiums)
 
-
-# add_game
+def list_of_teams(matches):
+    teams = {match['HomeTeam'] for match in matches}
+    return list(teams)
