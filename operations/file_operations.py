@@ -1,6 +1,9 @@
 import json
+from tabulate import tabulate
 from colorama import Fore, Style, init
+
 init()
+
 
 def load_games(file_path):
     """
@@ -13,8 +16,8 @@ def load_games(file_path):
 
     try:
         with open(file_path, 'r') as file:
-            games = json.load(file)
-        return games
+            matches = json.load(file)
+        return matches
     except FileNotFoundError:
         print(f"Error: The file {file_path} does not exist.")
         return []
@@ -23,7 +26,7 @@ def load_games(file_path):
         return []
     
 
-def save_games(file_path, games):
+def save_games(file_path, matches):
     """
     saves games to a JSON file
 
@@ -32,15 +35,39 @@ def save_games(file_path, games):
     """
     try:
         with open(file_path, 'w') as file:
-            json.dump(games, file, indent=4)
-        print(f"The game was successfully saved to {file_path}.")
+            json.dump(matches, file, indent=4)
+        print(f"Successfully saved to {file_path}.")
     except PermissionError:
         print(f"Error: Permission denide to write.")
     except Exception as e:
         print(f"An unexpected error has occured: {e}")
 
 
+ALLOWED_TEAMS = [
+    "Dragons", "Knights", "Sharks", "Storm", "Wests Tigers", "Cowboys", "Rabbitohs", 
+    "Bulldogs", "Titans", "Broncos", "Sea Eagles", "Dolphins", "Raiders", "Warriors", 
+    "Roosters", "Eels", "Panthers"
+]
 
+ALLOWED_LOCATIONS = [
+    "Suncorp Stadium", "Scully Park", "McDonald Jones Stadium", "Kayo Stadium",
+    "PointsBet Stadium", "Belmore Sports Ground", "AAMI Park", "BlueBet Stadium",
+    "Queensland Country Bank Stadium", "Cbus Super Stadium", "Go Media Stadium",
+    "Leichhardt Oval", "Allianz Stadium", "CommBank Stadium", "Netstrata Jubilee Stadium",
+    "Campbelltown Sports Stadium", "Accor Stadium", "Allegiant Stadium", "Apollo Projects Stadium",
+    "Industree Group Stadium", "WIN Stadium", "GIO Stadium", "Carrington Park",
+    "4 Pines Park", "TIO Stadium"
+]
+
+def display_allowed_teams():
+    headers = ["Teams"]
+    table = [[team] for team in ALLOWED_TEAMS]
+    print(Fore.YELLOW + tabulate(table, headers=headers, tablefmt="grid") + Style.RESET_ALL)
+
+def display_allowed_locations():
+    headers = ["Locations"]
+    table = [[location] for location in ALLOWED_LOCATIONS]
+    print(Fore.YELLOW + tabulate(table, headers=headers, tablefmt="grid") + Style.RESET_ALL)
 
 def add_match(filepath, new_match):
     matches = load_games(filepath)
@@ -68,9 +95,28 @@ def collect_match_details(filepath):
     try:
         round_number = int(input("Enter the round number: "))
         date = input("Enter the date (YYYY-MM-DD): ")
-        location = input("Enter the stadium: ")
-        home_team = input("Enter the home team: ")
-        away_team = input("Enter the away team: ")
+
+        #Display allowed locations
+        display_allowed_locations()
+        location = input(Fore.CYAN + "Enter the location: " + Style.RESET_ALL)
+        while location not in ALLOWED_LOCATIONS:
+            print(Fore.RED + "Invalid location. Please select a valid location from the list." + Style.RESET_ALL)
+            location = input(Fore.CYAN + "Enter the location: " + Style.RESET_ALL)
+
+        # Display allowed teams
+        display_allowed_teams()
+        home_team = input(Fore.CYAN + "Enter the home team: " + Style.RESET_ALL)
+        while home_team not in ALLOWED_TEAMS:
+            print(Fore.RED + "Invalid team. Please select a valid team from the list." + Style.RESET_ALL)
+            display_allowed_teams()
+            home_team = input(Fore.CYAN + "Enter the home team: " + Style.RESET_ALL)
+
+        away_team = input(Fore.CYAN + "Enter the away team: " + Style.RESET_ALL)
+        while away_team not in ALLOWED_TEAMS:
+            print(Fore.RED + "Invalid team. Please select a valid team from the list." + Style.RESET_ALL)
+            display_allowed_teams()
+            away_team = input(Fore.CYAN + "Enter the away team: " + Style.RESET_ALL)
+
         home_team_score = int(input("Enter the home team score: "))
         away_team_score = int(input("Enter the away team score: "))
 

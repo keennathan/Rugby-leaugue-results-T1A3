@@ -1,6 +1,9 @@
 from operations import load_games, save_games, display_games_from_round, team_with_most_points_scored, add_match, collect_match_details, list_of_stadiums, list_of_teams
 from tabulate import tabulate
 from colorama import Fore, Style, init
+import sys
+
+# initilising colorama
 init()
 
 
@@ -22,7 +25,7 @@ def main():
         print("5. List of all teams.")
         print("0. Save and exit.")
 
-        choice = input("Make a selection: ")
+        choice = input("\nMake a selection: ")
         if choice == '1':
             try:
                 round_number = int(input("Enter the round number: "))
@@ -76,11 +79,13 @@ def main():
                 print("No teams found.")
 
 
-        elif choice == 0:
+        elif choice == '0':
+            save_games(FILE_PATH, matches)
             print("Saving and exiting the program.")
+            sys.exit(0)
         
         else:
-            print("Invalid selection.")
+            print("Invalid selection.  Enter selection between 0 - 5")
 
 
 if __name__ == "__main__":
