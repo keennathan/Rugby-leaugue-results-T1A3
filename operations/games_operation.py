@@ -1,4 +1,24 @@
+from tabulate import tabulate
+from colorama import Fore, Style, init
 
+init()
+
+def display_menu():
+    menu_options = [
+        ["1", "Search for results from a round"],
+        ["2", "Find the team with the most points"],
+        ["3", "Add a new match"],
+        ["4", "List all Stadiums"],
+        ["5", "List all Teams"],
+        ["0", "Save and Exit"]
+    ]
+
+    headers = [Fore.GREEN + "Option" + Style.RESET_ALL, Fore.GREEN + "Description" + Style.RESET_ALL]
+    menu_table = tabulate(menu_options, headers=headers, tablefmt="grid")
+    
+    print(Fore.GREEN + "\nFooty Results Tracker\n" + Style.RESET_ALL)
+    print(menu_table)
+    print(Fore.GREEN + "\nPlease make a selection:" + Style.RESET_ALL)
 
 def display_games_from_round(matches, round_number):
     """

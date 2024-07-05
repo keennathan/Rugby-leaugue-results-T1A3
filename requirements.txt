@@ -1,3 +1,4 @@
 pip install tabulate
 pip install colorama
 source venv/bin/activate
+import sys

@@ -1,4 +1,4 @@
-from operations import load_games, save_games, display_games_from_round, team_with_most_points_scored, add_match, collect_match_details, list_of_stadiums, list_of_teams
+from operations import load_games, save_games, display_games_from_round, team_with_most_points_scored, add_match, collect_match_details, list_of_stadiums, list_of_teams, display_menu
 from tabulate import tabulate
 from colorama import Fore, Style, init
 import sys
@@ -13,22 +13,16 @@ def main():
     matches = load_games(FILE_PATH)
 
     if not matches:
-        print("No games loaded or an error has occured")
+        print(Fore.RED + "No games loaded or an error has occurred." + Style.RESET_ALL)
         return
     
     while True:
-        print(Fore.RED + "\nFooty Results Tracker" + Style.RESET_ALL)
-        print(Fore.MAGENTA + "1." + Style.RESET_ALL, "Search for results from a round.")
-        print("2. Display the team who has scored the most points.")
-        print("3. Add a match.")
-        print(Fore.MAGENTA + "4." + Style.RESET_ALL, "Display the different stadiums.")
-        print("5. List of all teams.")
-        print("0. Save and exit.")
+        display_menu()
+        choice = input(Fore.CYAN + "Make a selection: " + Style.RESET_ALL)
 
-        choice = input("\nMake a selection: ")
         if choice == '1':
             try:
-                round_number = int(input("Enter the round number: "))
+                round_number = int(input(Fore.CYAN +"Enter the round number: " + Style.RESET_ALL))
                 results = display_games_from_round(matches, round_number)
                 if results:
                     # Prepare data for tabulate
@@ -38,9 +32,9 @@ def main():
                     # Print table
                     print(tabulate(table, headers=headers, tablefmt="grid"))
                 else:
-                    print(f"No results found for round {round_number}.")
+                    print(Fore.RED + f"No results found for round {round_number}." + Style.RESET_ALL)
             except ValueError:
-                print("Invalid input. Please enter a valid round number.")
+                print(Fore.RED + "Invalid input. Please enter a valid round number." + Style.RESET_ALL)
             except Exception as e:
                 print(f"An unexpected error occurred: {e}")
 
@@ -48,7 +42,7 @@ def main():
         elif choice == "2":
             try:
                 top_team, max_points = team_with_most_points_scored(matches)
-                print(f"The team who has scored the most points is {top_team} with {max_points} points.")
+                print(Fore.CYAN + f"The team who has scored the most points is {top_team} with {max_points} points."+ Style.RESET_ALL)
             except Exception as e:
                 print(f"An unexpected error occurred: {e}")
 
@@ -68,12 +62,21 @@ def main():
             else:
                 print("No stadiums found.")
 
+        elif choice == '4':
+            list_teams = list_of_teams(matches)
+            if list_teams:
+                headers = ["All the different Teams"]
+                table = [[location] for location in list_stadiums]
+                print(Fore.CYAN + tabulate(table, headers=headers, tablefmt="grid") + Style.RESET_ALL)
+            else:
+                print("No stadiums found.")
+
 
         elif choice == '5':
             teams = list_of_teams(matches)
             if teams:
                 headers = ["All the different Teams"]
-                table = [[location] for location in teams]
+                table = [[team] for team in teams]
                 print(Fore.CYAN + tabulate(table, headers=headers, tablefmt="grid") + Style.RESET_ALL)
             else:
                 print("No teams found.")
