@@ -103,4 +103,17 @@ This feature will show a list of all the stadiums played at in the season.
 
 ![alt text](docs/ListStadiums.png)
 
+### List all the teams:
+This feature will show a list of all the teams in the competion.
+### The Logic:
+1. Input Data:
+    * 'matches' is a list of dictionaries where each dictionary represents a match and contains keys such as 'HomeTeam' and AwayTeam'.
+2. Extract the Team Names:
+    * A set comprehension is used to iterate over each match dictionary in the 'matches' list and extracts the value associated with the 'HomeTeam' and 'AwayTeam'.  
+    * using .union joins the sets together and ensures only unique team names are collected.
+3. Convert set to list:
+    * The set of unique team names is converted to a list using the 'list()' function.  
+4. Return statement:
+    * The function returns a list of unique team names.
 
+![alt text](docs/ListTeams.png)
