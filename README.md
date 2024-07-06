@@ -21,6 +21,7 @@ With this feature the user will be given a list of options choose from.  This wi
         * Option 5 Lists the teams - Lists the teams that play in the competion.  
         * option 0 Exit - Saves and exits the program.  
         * Invalid selection - It prints an error message if the user doesn't enter a valid selection.  
+
 ![alt text](docs/MainMenu.png)
 
 ### Display games from a round:
@@ -37,7 +38,8 @@ This function will let the user select a round and will print out the results of
 3. Assigning the results:
     * The resulting list, that contains only the dictionaries that meet the condition, is assigned to the variable 'results'.
 4. Return Statement:
-    * the 'results' list is then returned.
+    * the 'results' list is then returned.  
+
 ![alt text](docs/round.png)
 
 
@@ -64,6 +66,26 @@ This function will calculate which team has scored the most points across all th
     * For each team, if their points are greater than 'max_points', update 'max_points' and 'top_team'.
 7. Return Statement:
     * Return the 'top_team' and 'max_points'.  
-![alt text](docs/MostPoints.png)
+
+![alt text](docs/MostPoints.png)  
+ 
+### Add a Match:
+This feature allows the user to add a match to the json file.
+### The Logic:  
+1. Input Parameters:
+    * 'filepath' is the path to the file that contains the matches.  
+    * 'new_match' is the dictionary containing the details of the new match to be add.  
+2. Load Existing Matches:
+    * The 'load_games' function is called to load existing matches from the file specified by 'filepath'.
+    * If 'load_games' returns 'None', it indicates that there is an error with loading the matches and prints an error message and returns without adding the new match.
+3. Append New Match:
+    * The function 'collect_match_details' is called to collect the details.
+    * If the matches are successfully loaded, the new match is appended to the list of existing matches.
+4. Save Updated Matches:
+    * The updated list of matches is saved back to the file by using the 'save_games' function.
+5. Success Message:
+    * After successfully saving the updated matches, the function prints a success message.  
+
+![alt text](docs/AddMatch.png)  
 
 
