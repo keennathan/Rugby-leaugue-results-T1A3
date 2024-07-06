@@ -117,5 +117,12 @@ def list_of_stadiums(matches):
     return list(list_stadiums)
 
 def list_of_teams(matches):
-    teams = {match['HomeTeam'] for match in matches}
+    """
+    lists all the teams from the matches.
+    Args:
+        matches (list): list of dictionaries.
+    returns:
+        list of all the Teams.
+    """
+    teams = {match['HomeTeam'] for match in matches}.union({match['AwayTeam'] for match in matches})
     return list(teams)

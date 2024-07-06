@@ -88,4 +88,19 @@ This feature allows the user to add a match to the json file.
 
 ![alt text](docs/AddMatch.png)  
 
+### List all the stadiums played at:
+This feature will show a list of all the stadiums played at in the season.
+### The Logic:
+1. Input Data:
+    * 'matches' is a list of dictionaries where each dictionary represents a match and contains keys such as 'Location'.
+2. Extact the stadium locations:
+    * Iterate over each match in the 'matches' list and extract the value associated with the 'Location' key.
+    * Using a set ensures that only unique locations will be collected because sets do not allow duplicate values.  
+3. Convert set to list:
+    * The set of unique stadiums is converted to a list using the 'list()' function.
+4. Return statement:
+    * The function returns a list of unique stadiums.  
+
+![alt text](docs/ListStadiums.png)
+
 
