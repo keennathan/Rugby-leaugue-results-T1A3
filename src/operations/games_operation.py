@@ -14,7 +14,7 @@ def display_menu():
     ]
 
     headers = [Fore.GREEN + "Option" + Style.RESET_ALL, Fore.GREEN + "Description" + Style.RESET_ALL]
-    menu_table = tabulate(menu_options, headers=headers, tablefmt="grid")
+    menu_table = Fore.GREEN + tabulate(menu_options, headers=headers, tablefmt="grid") + Style.RESET_ALL
     
     print(Fore.GREEN + "\nFooty Results Tracker\n" + Style.RESET_ALL)
     print(menu_table)

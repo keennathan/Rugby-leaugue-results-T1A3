@@ -1,4 +1,5 @@
 import json
+import datetime
 from tabulate import tabulate
 from colorama import Fore, Style, init
 
@@ -94,7 +95,13 @@ def collect_match_details(filepath):
 
     try:
         round_number = int(input("Enter the round number: "))
-        date = input("Enter the date (YYYY-MM-DD): ")
+        while True:    
+            date = input("Enter the date (YYYY-MM-DD): ")
+            try:
+                datetime.datetime.strptime(date, "%Y-%m-%d")
+                break
+            except ValueError:
+                print(Fore.RED + "Invalid date format. Please enter the date in YYYY-MM-DD format." + Style.RESET_ALL) 
 
         #Display allowed locations
         display_allowed_locations()
