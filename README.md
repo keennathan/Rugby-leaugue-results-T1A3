@@ -21,6 +21,21 @@ With this feature the user will be given a list of options choose from.  This wi
         * Option 5 Lists the teams - Lists the teams that play in the competion.  
         * option 0 Exit - Saves and exits the program.  
         * Invalid selection - It prints an error message if the user doesn't enter a valid selection.  
-        
+
+### Display games from a round:
+This feature will let the user select a round and will print out the results of all the games in that round.
+### The Logic:
+1. Input Data:
+    * 'matches' - A list of dictonaries where each dictonary represents a match and contains keys such as 'RoundNumber'.
+    * 'round_number' - is a number that represents the round number we want to filter to.
+2. List Comprehension:
+    * Iterate over each dictionary('match') in the list 'matches'.
+    * For each 'match', check if the value associated with the key 'RoundNumber' is equal to 'round_number'.
+    * If it is True, add the 'match' dictionary to the resulting list.
+    * If it is False, exclude the 'match' dictionary from the resulting list.
+3. Assigning the results:
+    * The resulting list, that contains only the dictionaries that meet the condition, is assigned to the variable 'results'.
+4. Return Statement:
+    * the 'results' list is then returned.
 
 

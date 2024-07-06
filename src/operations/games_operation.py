@@ -40,13 +40,17 @@ def display_games_from_round(matches, round_number):
     list: A list of dictionaries containing the match results for the specified round. Returns an empty list if no matches are found.
     """
     try:
+        # Filter matches with the specified round number
         results = [match for match in matches if match['RoundNumber'] == round_number]
         return results
     except KeyError as e:
+        # Handle missing keys in the match dictionaries
         print(f"Key error: {e} - One of the matches is missing expected keys.")
     except TypeError as e:
+        # Handle incorrect input data types
         print(f"Type error: {e} - Input data is not in the expected format.")
     except Exception as e:
+        # Handle any other unexpected errors
         print(f"An unexpected error occurred: {e}")
     return []
 
