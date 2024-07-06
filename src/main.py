@@ -88,7 +88,7 @@ def main():
             sys.exit(0)
         
         else:
-            print("Invalid selection.  Enter selection between 0 - 5")
+            print(Fore.RED + "Invalid selection.  Enter selection between 0 - 5" + Style.RESET_ALL)
 
 
 if __name__ == "__main__":
