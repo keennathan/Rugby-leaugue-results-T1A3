@@ -11,6 +11,8 @@ This application adheres to the PEP8 Style guide.  It is used with Python as a s
     - use of docstrings to define a particular function,
     - regular use of commenting,
     - use of naming conventions such as CamelCase for classes and snake_case for functions and variables.
+### Reference:
+* PEP 8 : Coding Style guide in Python - GeeksforGeeks. (2017, September 11). GeeksforGeeks. https://www.geeksforgeeks.org/pep-8-coding-style-guide-python/
 
 ## Overview: 
 This application was made to track rugby leaugue results.  The user will be able to look up results from a selected round, add a match, see which team has scored the most points in the season, see the list of stadiums played at, see the list of teams in the competion and save and exit the program. 
