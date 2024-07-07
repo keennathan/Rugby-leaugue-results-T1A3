@@ -133,4 +133,25 @@ This feature will show a list of all the teams in the competion.
 
 ![alt text](docs/ListTeams.png)
 
+## Implementation Plan: 
+Using a Trello board, I divided the work needed into smaller steps and listed them on the cards.  The cards included step by step plan which outlined each feature of the program, checklists, prioritization and time indicators.  
+- Trello Board Link  https://trello.com/b/PrNok4BB/python-assignment  
+
+### Setup and Organise Files:  
+* Create a directory for the project.
+* Create the git repository and link to git hub.
+![alt text](docs/GitHub.png)  
+
+* Make the JSON file.  
+![alt text](docs/Json.png)  
+
+* Create all the files that go in the main directory.  
+![alt text](docs/file.png)  
+
+* create the virtual environment.
+![alt text](docs/virtualEnviro.png)  
+
+### Main features:
+
+
 
