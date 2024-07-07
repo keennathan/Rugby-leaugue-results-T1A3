@@ -1,6 +1,17 @@
 # Rugby League Results Tracker
+
 ## Link to GitHub:
-* https://github.com/keennathan/Rugby-leaugue-results-T1A3
+* https://github.com/keennathan/Rugby-leaugue-results-T1A3  
+
+## Style Guide or Styling Conventions:
+This application adheres to the PEP8 Style guide.  It is used with Python as a set of conventions for writing readable and consistant code.  
+* Code Layout:  
+    - Uses 4 spaces per indentation level,  
+    - Lines are limited to 79 characters,
+    - use of docstrings to define a particular function,
+    - regular use of commenting,
+    - use of naming conventions such as CamelCase for classes and snake_case for functions and variables.
+
 ## Overview: 
 This application was made to track rugby leaugue results.  The user will be able to look up results from a selected round, add a match, see which team has scored the most points in the season, see the list of stadiums played at, see the list of teams in the competion and save and exit the program. 
 

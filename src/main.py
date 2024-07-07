@@ -1,4 +1,5 @@
-from operations import load_games, save_games, display_games_from_round, team_with_most_points_scored, add_match, collect_match_details, list_of_stadiums, list_of_teams, display_menu
+from operations import load_games, save_games, display_games_from_round, team_with_most_points_scored,\
+     add_match, collect_match_details, list_of_stadiums, list_of_teams, display_menu
 from tabulate import tabulate
 from colorama import Fore, Style, init
 import sys
