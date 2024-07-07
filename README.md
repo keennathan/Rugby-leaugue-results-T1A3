@@ -167,4 +167,6 @@ Using a Trello board, I divided the work needed into smaller steps and listed th
 ![alt text](docs/helpDoc.png)  
 
 * Finish the README and Submit.
-![alt text](docs/sub.png)
+![alt text](docs/sub.png)  
+
+
