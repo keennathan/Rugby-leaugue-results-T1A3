@@ -152,6 +152,19 @@ Using a Trello board, I divided the work needed into smaller steps and listed th
 ![alt text](docs/virtualEnviro.png)  
 
 ### Main features:
+* start on the main features of the app.
+![alt text](docs/roundResults.png)  
 
+![alt text](docs/TeamPoints.png)
 
+![alt text](docs/AddGame.png)
 
+* Start the main menu of the app with the main functions.  
+![alt text](docs/MenuMain.png)  
+
+### Readme and Help Documents:
+* Create the Help Documentation.  
+![alt text](docs/helpDoc.png)  
+
+* Finish the README and Submit.
+![alt text](docs/sub.png)
