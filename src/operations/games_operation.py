@@ -4,6 +4,12 @@ from colorama import Fore, Style, init
 init()
 
 def display_menu():
+    """
+    Display the main menu with options for the user to choose from.
+
+    Returns:
+    None
+    """
     menu_options = [
         ["1", "Search for results from a round"],
         ["2", "Find the team with the most points"],
@@ -108,7 +114,7 @@ def team_with_most_points_scored(matches):
 def list_of_stadiums(matches):
     """
     lists all the stadiums from the matches.
-    Args:
+    Parameters:
         matches (list): list of dictionaries.
     returns:
         list of stadiums played at.
@@ -119,7 +125,7 @@ def list_of_stadiums(matches):
 def list_of_teams(matches):
     """
     lists all the teams from the matches.
-    Args:
+    Parameters:
         matches (list): list of dictionaries.
     returns:
         list of all the Teams.
