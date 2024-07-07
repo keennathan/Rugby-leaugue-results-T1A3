@@ -1,4 +1,6 @@
 # Rugby League Results Tracker
+## Link to GitHub:
+* https://github.com/keennathan/Rugby-leaugue-results-T1A3
 ## Overview: 
 This application was made to track rugby leaugue results.  The user will be able to look up results from a selected round, add a match, see which team has scored the most points in the season, see the list of stadiums played at, see the list of teams in the competion and save and exit the program. 
 
@@ -117,3 +119,5 @@ This feature will show a list of all the teams in the competion.
     * The function returns a list of unique team names.
 
 ![alt text](docs/ListTeams.png)
+
+
