@@ -57,6 +57,7 @@ def main():
             # Add a new match
             new_match = collect_match_details(FILE_PATH)
             if new_match:
+                matches.append(new_match)
                 add_match(FILE_PATH, new_match)
                 
 
