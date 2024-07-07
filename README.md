@@ -182,5 +182,16 @@ Using a Trello board, I divided the work needed into smaller steps and listed th
 1. Clone the repository:  
     - In the terminal enter the command:  
     **git clone git@github.com:keennathan/Rugby-leaugue-results-T1A3.git**  
+2. Change directory:
+    - change into the directory src of the Rugby-leaugue-results-T1A3:
+    **cd Rugby-leaugue-results-T1A3/src/**  
+3. Run the Executable:  
+    - To start the application enter, in the terminal, the command:  
+    **./run.sh**
+    - If there is an error with running the file, enter the following comand then try running it again:
+    **chmod +x run.sh**  - this command will turn it to an executable file.  
+When you run the run.sh file the script will check if python3.10 is installed or not, then try to install it if its not installed.  It then checks if pip for python3 is installed or not, if not it will install it.  Then it checks if python3.10-venv is installed, if not it will install it.  Next it creates the virtual environment and activates it.  Pip then installs the requirements.txt to install the dependencies.  Then it runs the main.py file which begins the app.  Then deactivates the virtual environment.  
+### How to Use App:
+
 
 
