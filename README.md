@@ -183,19 +183,19 @@ Using a Trello board, I divided the work needed into smaller steps and listed th
     - In the terminal enter the command:  
     **git clone git@github.com:keennathan/Rugby-leaugue-results-T1A3.git**  
 2. Change directory:
-    - change into the directory src of the Rugby-leaugue-results-T1A3:
+    - change into the directory src of the Rugby-leaugue-results-T1A3:  
     **cd Rugby-leaugue-results-T1A3/src/**  
 3. Run the Executable:  
     - To start the application enter, in the terminal, the command:  
     **./run.sh**
-    - If there is an error with running the file, enter the following comand then try running it again:
+    - If there is an error with running the file, enter the following comand then try running it again:  
     **chmod +x run.sh**  - this command will turn it to an executable file.  
-When you run the run.sh file the script will check if python3.10 is installed or not, then try to install it if its not installed.  It then checks if pip for python3 is installed or not, if not it will install it.  Then it checks if python3.10-venv is installed, if not it will install it.  Next it creates the virtual environment and activates it.  Pip then installs the requirements.txt to install the dependencies.  Then it runs the main.py file which begins the app.  Then it deactivates the virtual environment.  
+* When you run the run.sh file the script will check if python3.10 is installed or not, then try to install it if its not installed.  It then checks if pip for python3 is installed or not, if not it will install it.  Then it checks if python3.10-venv is installed, if not it will install it.  Next it creates the virtual environment and activates it.  Pip then installs the requirements.txt to install the dependencies.  Then it runs the main.py file which begins the app.  Then it deactivates the virtual environment.  
 ### How to Use App:
 - Once the app is running a menu with a list of options will appear.  
 ![alt text](docs/AppMenu.png)  
 - Option 1 will then ask you for a round number to search for.  When you enter a number it will search through the JSON file and display all the games from that round. 
-    - It will then loop back to the main menu and ask for another selection.
+    - It will then loop back to the main menu and ask for another selection.  
 ![alt text](docs/AppRoundSelection.png)  
 ![alt text](docs/AppRoundEG.png)  
   
@@ -206,13 +206,16 @@ When you run the run.sh file the script will check if python3.10 is installed or
 ![alt text](docs/AppEnterRound.png)
 ![alt text](docs/AppEnterLoc.png)
 ![alt text](docs/AppEnterTeam.png)
-![alt text](docs/AppEnterScore.png)
+![alt text](docs/AppEnterScore.png)  
+
 - Option 4 creates a list of all the stadiums played at this year.  
-    - It will then loop back to the main menu and ask for another selection.
-![alt text](docs/AppStadiums.png)
+    - It will then loop back to the main menu and ask for another selection.  
+![alt text](docs/AppStadiums.png)  
+
 - Option 5 creates a list of all the teams that are in the competion.  
-    - It will then loop back to the main menu and ask for another selection.
-![alt text](docs/Appteams.png)
-- Option 0 saves and exits the program.
+    - It will then loop back to the main menu and ask for another selection.  
+![alt text](docs/Appteams.png)  
+
+- Option 0 saves and exits the program.  
 ![alt text](docs/SaveExit.png)
 
