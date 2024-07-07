@@ -179,4 +179,8 @@ Using a Trello board, I divided the work needed into smaller steps and listed th
     - Python Version: Python3.10.
 
 ### Installation:
+1. Clone the repository:  
+    - In the terminal enter the command:  
+    **git clone git@github.com:keennathan/Rugby-leaugue-results-T1A3.git**  
+
 
