@@ -169,4 +169,14 @@ Using a Trello board, I divided the work needed into smaller steps and listed th
 * Finish the README and Submit.
 ![alt text](docs/sub.png)  
 
+## Help Document:
+### Hardware Requirements:
+* Basic Requirements-
+    - CPU: Any modern processor will do.
+    - RAM: 4GB.
+    - Storage: 10GB of free disk space.
+    - Operating System: Linux(e.g Ubuntu), Windows, or macOS.
+    - Python Version: Python3.10.
+
+### Installation:
 
